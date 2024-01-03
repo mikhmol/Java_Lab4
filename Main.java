@@ -17,6 +17,10 @@ public class Main {
         Arrays.sort(students, Student.sortByAgeDesc);
         System.out.println("\nСортування за спаданням поля age:");
         printStudents(students);
+
+        Arrays.sort(students, Student.sortCast);
+        System.out.println("\nСортування за множенням поля age * averageGrade:");
+        printStudents(students);
     }
 
     private static void printStudents(Student[] students) {

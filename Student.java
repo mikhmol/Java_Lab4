@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Comparator;
 
 public class Student {
@@ -38,4 +37,18 @@ public class Student {
     public static Comparator<Student> sortByAverageGradeAsc = Comparator.comparingDouble(Student::getAverageGrade);
 
     public static Comparator<Student> sortByAgeDesc = Comparator.comparingInt(Student::getAge).reversed();
+
+    public static Comparator<Student> sortCast = new Comparator<Student>() {
+        @Override
+        public int compare(Student o1, Student o2) {
+            double mult = o1.getAge() * o1.getAverageGrade();
+            double mult2 = o2.getAge()* o2.getAverageGrade();
+            if(mult < mult2){
+                return -1;
+            } else if (mult > mult2){
+                return 1;
+            }
+            return 0;
+        }
+    };
 }
